@@ -29,7 +29,7 @@ const Contact = () => {
   return (
     <div>
       {isSubmitted ? (
-        <div>Thank you ! Your message has been successfully sent.</div>
+        <div>Thank you, dear {formData.name}  ! Your message has been successfully sent and we will respond to it by email at {formData.email}. Thank you for your patience !</div>
       ) : (
         <form onSubmit={handleSubmit}>
           <div>

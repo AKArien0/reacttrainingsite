@@ -1,14 +1,21 @@
+import { useState } from "react"
+import { Navigate } from "react-router-dom"
 
 const NotFound = () => {
+    const [redirectNow, setRedirectNow] = useState(false)
     setTimeout(() => {
-        window.location.replace("/")
+        setRedirectNow(true)
     }, 3000)
 
     return (
         <>
-            <h1>
-                Not found
-            </h1>
+            {redirectNow ?
+                <Navigate to="/" />
+            :
+                <h1>
+                    Not found
+                </h1>
+            }
         </>
     )
 }
