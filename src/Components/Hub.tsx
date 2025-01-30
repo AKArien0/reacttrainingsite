@@ -4,13 +4,15 @@ const Hub = () => {
 
     return (
         <>
-            <h1>
+            <h1 className="text-center my-4">
                 Welcome to this site
             </h1>
-            <p>
-                Click below to see the current salmon run rewards.
+            <p className="text-center mb-4">
+                Click below to see the current salmon run rotations.
             </p>
-            <Link to="/rotations">Knowledge is here !</Link>
+            <div className="text-center">
+                <Link to="/rotations" className="btn btn-primary">Knowledge is here!</Link>
+            </div>
         </>
     )
 }
