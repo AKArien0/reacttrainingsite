@@ -35,7 +35,7 @@ const Rotations = () => {
         setScheduleData(data.data.coopGroupingSchedule.regularSchedules.nodes);
         setLoading(false);
       } catch (err) {
-        setError("Oops");
+        setError("Oops, something went wrong.");
         setLoading(false);
       }
     };
@@ -44,23 +44,23 @@ const Rotations = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="text-center">Loading...</div>;
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return <div className="alert alert-danger text-center">{error}</div>;
   }
 
   return (
-    <div className="rotations">
-      <h1>Upcoming Coop Schedules</h1>
+    <div className="container mt-5">
+      <h1 className="text-center mb-4">Upcoming Coop Schedules</h1>
 
       {scheduleData && scheduleData.length > 0 ? (
         scheduleData.map((schedule, index) => (
           <Rotation key={index} schedule={schedule} />
         ))
       ) : (
-        <p>No schedules available at the moment.</p>
+        <p className="text-center">No schedules available at the moment.</p>
       )}
     </div>
   );

@@ -5,29 +5,17 @@ const Header = () => {
   const { user } = useAuth()
 
   return (
-    <>
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-            {user ? (
-              <li>
-                <Link to="/logout">Log out</Link>
-              </li>
-            ) : (
-              <li>
-                <Link to="/login">Login</Link>
-              </li>
-            )}
-          </ul>
-        </nav>
-      </header>
-    </>
+    <header className="bg-dark py-3">
+      <nav className="container d-flex justify-content-between">
+        <Link to="/" className="text-white text-decoration-none">Home</Link>
+        <Link to="/contact" className="text-white text-decoration-none">Contact</Link>
+        {user ? (
+          <Link to="/logout" className="text-white text-decoration-none">Log out</Link>
+        ) : (
+          <Link to="/login" className="text-white text-decoration-none">Login</Link>
+        )}
+      </nav>
+    </header>
   )
 }
 
